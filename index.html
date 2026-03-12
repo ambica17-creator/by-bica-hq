@@ -955,7 +955,7 @@ body {
 <!-- SIDEBAR -->
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <div class="brand-name">By <span>Bica</span></div>
+    <div class="brand-name">by <span>bica</span></div>
     <div class="brand-tagline">the bold and the dreamy</div>
   </div>
   <div class="sidebar-nav">
@@ -966,29 +966,23 @@ body {
     <div class="nav-section-label">My Collection</div>
     <div class="nav-item" onclick="showSection('palettes')">
       <span class="nav-icon">👁️</span> Palette Inventory
-      <span class="nav-count" id="palette-count">0</span>
     </div>
     <div class="nav-item" onclick="showSection('wishlist')">
       <span class="nav-icon">🛍️</span> Wish List
-      <span class="nav-count" id="wish-count">0</span>
     </div>
     <div class="nav-section-label">Content</div>
     <div class="nav-item" onclick="showSection('ideas')">
       <span class="nav-icon">💡</span> Content Ideas
-      <span class="nav-count" id="ideas-count">0</span>
     </div>
     <div class="nav-item" onclick="showSection('reviews')">
       <span class="nav-icon">📖</span> Reviews & Tutorials
-      <span class="nav-count" id="reviews-count">0</span>
     </div>
     <div class="nav-item" onclick="showSection('trends')">
       <span class="nav-icon">📈</span> Trends
-      <span class="nav-count" id="trends-count">0</span>
     </div>
     <div class="nav-section-label">Inspiration</div>
     <div class="nav-item" onclick="showSection('inspo')">
       <span class="nav-icon">🌸</span> Inspo Board
-      <span class="nav-count" id="inspo-count">0</span>
     </div>
   </div>
   <div class="sidebar-footer">
@@ -1003,13 +997,13 @@ body {
   <section id="dashboard" class="section active">
     <div class="page-header">
       <div>
-        <div class="page-title">Good morning, <span>Bica</span> ✨</div>
+        <div class="page-title" id="greeting-title">Good evening, <span>bica</span> ✨</div>
         <div class="page-subtitle">Your creative headquarters</div>
       </div>
     </div>
     <div class="content">
       <div class="dashboard-hero">
-        <h2>By <em>Bica</em> HQ</h2>
+        <h2>by <em>bica</em> hq</h2>
         <p>the bold and the dreamy</p>
       </div>
       <div class="stats-row">
@@ -1491,6 +1485,38 @@ body {
   </div>
 </div>
 
+<!-- PALETTE DETAIL MODAL -->
+<div class="modal-overlay" id="modal-palette-detail">
+  <div class="modal" style="max-width:640px;">
+    <div class="modal-header" id="detail-header" style="padding-bottom:0;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--rose);margin-bottom:6px;" id="detail-brand"></p>
+          <h3 id="detail-name" style="font-size:32px;"></h3>
+        </div>
+        <button class="modal-close" onclick="closeModal('palette-detail')" style="position:relative;top:0;right:0;">×</button>
+      </div>
+      <div id="detail-img-area" style="height:180px;margin:20px -36px 0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:64px;"></div>
+    </div>
+    <div class="modal-body" style="padding-top:24px;">
+      <div id="detail-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"></div>
+      <div id="detail-rating" style="font-size:20px;margin-bottom:16px;"></div>
+      <div id="detail-review" style="display:none;">
+        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--strawberry);margin-bottom:8px;font-weight:500;">My Review</p>
+        <p id="detail-review-text" style="font-size:14px;color:var(--plum);line-height:1.7;margin-bottom:20px;"></p>
+      </div>
+      <div id="detail-notes" style="display:none;">
+        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;font-weight:500;">Content Ideas</p>
+        <p id="detail-notes-text" style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;font-style:italic;"></p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeModal('palette-detail')">Close</button>
+      <button class="btn-primary" id="detail-edit-btn">✏️ Edit Palette</button>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // ---- SUPABASE ----
@@ -1584,6 +1610,7 @@ function closeModal(type) {
   clearForm(type);
   // Reset titles
   const titles = {
+    'palette-detail': [null, null, null],
     palette: ['Add a Palette 💄', 'Log a new palette to your collection', 'Add to Collection ✨'],
     idea: ['New Content Idea 💡', 'Capture the spark before it fades', 'Save Idea 🌸'],
     wish: ['Add to Wish List 🛍️', "Something you're lusting after", 'Add to List 🛍️'],
@@ -1869,7 +1896,7 @@ function renderPalettes() {
   }
 
   grid.innerHTML = items.map(p => `
-    <div class="item-card">
+    <div class="item-card" onclick="openPaletteDetail(${p.id})" style="cursor:pointer;">
       <div class="item-card-color" style="${p.img ? 'padding:0;' : 'background:' + (PALETTE_GRADIENTS[(p.ranges||[])[0]] || PALETTE_GRADIENTS.mixed)}">
         ${p.img ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='👁️';this.parentElement.style.background='${PALETTE_GRADIENTS.mixed}'">` : '👁️'}
       </div>
@@ -1887,8 +1914,8 @@ function renderPalettes() {
         ${p.notes ? `<div class="item-note">${p.notes}</div>` : ''}
       </div>
       <div class="item-card-actions">
-        <button class="action-btn edit" onclick="editPalette(${p.id})">✏️ Edit</button>
-        <button class="action-btn delete" onclick="deleteItem('palettes', ${p.id})">🗑 Remove</button>
+        <button class="action-btn edit" onclick="event.stopPropagation();editPalette(${p.id})">✏️ Edit</button>
+        <button class="action-btn delete" onclick="event.stopPropagation();deleteItem('palettes', ${p.id})">🗑 Remove</button>
       </div>
     </div>
   `).join('');
@@ -2048,12 +2075,6 @@ function renderInspo() {
 
 // ---- COUNTS ----
 function updateCounts() {
-  document.getElementById('palette-count').textContent = data.palettes.length;
-  document.getElementById('wish-count').textContent = data.wishlist.length;
-  document.getElementById('ideas-count').textContent = data.ideas.length;
-  document.getElementById('reviews-count').textContent = data.reviews.length;
-  document.getElementById('trends-count').textContent = data.trends.length;
-  document.getElementById('inspo-count').textContent = data.inspo.length;
   document.getElementById('stat-palettes').textContent = data.palettes.length;
   document.getElementById('stat-ideas').textContent = data.ideas.length;
   document.getElementById('stat-wishes').textContent = data.wishlist.length;
@@ -2068,6 +2089,59 @@ function renderAll() {
   renderTrends();
   renderInspo();
   updateCounts();
+}
+
+// ---- PALETTE DETAIL ----
+function openPaletteDetail(id) {
+  const p = data.palettes.find(p => p.id === id);
+  if (!p) return;
+
+  document.getElementById('detail-brand').textContent = p.brand;
+  document.getElementById('detail-name').textContent = p.name;
+
+  // Image
+  const imgArea = document.getElementById('detail-img-area');
+  if (p.img) {
+    imgArea.innerHTML = `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='👁️'">`;
+  } else {
+    imgArea.innerHTML = '👁️';
+    imgArea.style.background = 'linear-gradient(135deg, var(--blush), var(--champagne))';
+  }
+
+  // Tags
+  const tags = document.getElementById('detail-tags');
+  const allTags = [
+    ...(p.ranges||[]).map(r => `<span class="tag warm">${r.replace(/-/g,' ')}</span>`),
+    `<span class="tag mixed">${p.finish}</span>`,
+    ...(p.vibes||[]).map(v => `<span class="tag loved">${v.replace(/-/g,' ')}</span>`),
+    `<span class="tag ${p.condition}">${p.condition === 'new-item' ? 'Brand New' : p.condition === 'loved' ? 'Well Loved' : 'Barely Touched'}</span>`
+  ];
+  tags.innerHTML = allTags.join('');
+
+  // Rating
+  document.getElementById('detail-rating').textContent = p.rating ? '⭐'.repeat(p.rating) + '☆'.repeat(5-p.rating) : '';
+
+  // Review
+  const reviewEl = document.getElementById('detail-review');
+  if (p.review) {
+    reviewEl.style.display = 'block';
+    document.getElementById('detail-review-text').textContent = p.review;
+  } else { reviewEl.style.display = 'none'; }
+
+  // Notes
+  const notesEl = document.getElementById('detail-notes');
+  if (p.notes) {
+    notesEl.style.display = 'block';
+    document.getElementById('detail-notes-text').textContent = p.notes;
+  } else { notesEl.style.display = 'none'; }
+
+  // Edit button
+  document.getElementById('detail-edit-btn').onclick = () => {
+    closeModal('palette-detail');
+    editPalette(id);
+  };
+
+  document.getElementById('modal-palette-detail').classList.add('open');
 }
 
 // ---- EDIT FUNCTIONS ----
@@ -2142,7 +2216,18 @@ function editInspo(id) {
   document.getElementById('modal-inspo').classList.add('open');
 }
 
+// ---- GREETING ----
+function updateGreeting() {
+  const hour = new Date().getHours();
+  let greeting = 'Good morning';
+  if (hour >= 12 && hour < 17) greeting = 'Good afternoon';
+  else if (hour >= 17) greeting = 'Good evening';
+  const el = document.getElementById('greeting-title');
+  if (el) el.innerHTML = greeting + ', <span>bica</span> ✨';
+}
+
 // ---- INIT ----
+updateGreeting();
 loadData();
 </script>
 </body>
