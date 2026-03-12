@@ -1,4 +1,82 @@
-<!DOCTYPE html>
+-- By Bica HQ Database Setup
+-- Run this in Supabase SQL Editor
+
+create table if not exists palettes (
+  id bigint primary key,
+  brand text,
+  name text,
+  ranges text[],
+  finish text,
+  vibes text[],
+  condition text,
+  pillar text,
+  rating int,
+  img text,
+  review text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+create table if not exists ideas (
+  id bigint primary key,
+  title text,
+  pillar text,
+  status text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+create table if not exists wishlist (
+  id bigint primary key,
+  brand text,
+  name text,
+  price text,
+  priority text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+create table if not exists reviews (
+  id bigint primary key,
+  title text,
+  type text,
+  status text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+create table if not exists trends (
+  id bigint primary key,
+  name text,
+  heat text,
+  platform text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+create table if not exists inspo (
+  id bigint primary key,
+  title text,
+  img text,
+  emoji text,
+  notes text,
+  created_at timestamptz default now()
+);
+
+-- Allow public access (since this is your personal HQ)
+alter table palettes enable row level security;
+alter table ideas enable row level security;
+alter table wishlist enable row level security;
+alter table reviews enable row level security;
+alter table trends enable row level security;
+alter table inspo enable row level security;
+
+create policy "Allow all" on palettes for all using (true) with check (true);
+create policy "Allow all" on ideas for all using (true) with check (true);
+create policy "Allow all" on wishlist for all using (true) with check (true);
+create policy "Allow all" on reviews for all using (true) with check (true);
+create policy "Allow all" on trends for all using (true) with check (true);
+create policy "Allow all" on inspo for all using (true) with check (true);<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
