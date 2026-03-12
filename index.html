@@ -215,7 +215,7 @@ body {
   background: var(--blush);
 }
 
-/* CONTENT AREA */
+/* content AREA */
 .content {
   padding: 40px 48px;
 }
@@ -649,7 +649,7 @@ body {
 
 .search-input:focus { border-color: var(--strawberry); }
 
-/* CONTENT IDEAS */
+/* content IDEAS */
 .idea-card {
   background: white;
   border-radius: 16px;
@@ -726,6 +726,64 @@ body {
 .icon-btn.edit { background: var(--blush); color: var(--strawberry); }
 .icon-btn.delete { background: #FFF0F0; color: #E53935; }
 .icon-btn:hover { transform: scale(1.1); }
+
+/* ROSTER */
+.roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.roster-card { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(240,67,110,0.1); transition: box-shadow 0.2s; }
+.roster-card:hover { box-shadow: 0 8px 32px rgba(240,67,110,0.12); }
+.roster-name { font-family: "Playfair Display", serif; font-size: 20px; color: var(--plum); margin-bottom: 2px; }
+.roster-handle { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+.roster-links { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.roster-link { font-size: 12px; padding: 5px 14px; border-radius: 20px; text-decoration: none; font-weight: 500; border: 1px solid; transition: all 0.15s; }
+.roster-link.tiktok { color: #000; border-color: #000; background: #fff; }
+.roster-link.tiktok:hover { background: #000; color: #fff; }
+.roster-link.instagram { color: #C13584; border-color: #C13584; background: #fff; }
+.roster-link.instagram:hover { background: #C13584; color: #fff; }
+.roster-link.youtube { color: #FF0000; border-color: #FF0000; background: #fff; }
+.roster-link.youtube:hover { background: #FF0000; color: #fff; }
+.roster-notes { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+.roster-actions { display: flex; gap: 8px; }
+
+/* WISHLIST TABLE */
+.wish-table-wrap { overflow-x: auto; }
+.wish-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.wish-table thead th { text-align: left; padding: 10px 14px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--blush); font-weight: 500; }
+.wish-table tbody tr { border-bottom: 1px solid rgba(240,67,110,0.07); transition: background 0.15s; }
+.wish-table tbody tr:hover { background: var(--blush); }
+.wish-img-cell { width: 56px; padding: 10px 8px 10px 0; }
+.wish-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; display: block; }
+.wish-thumb-empty { width: 48px; height: 48px; border-radius: 8px; background: linear-gradient(135deg, var(--blush), var(--champagne)); }
+.wish-name-cell { padding: 10px 14px; font-weight: 500; color: var(--plum); }
+.wish-note { font-size: 11px; color: var(--text-muted); margin-top: 3px; font-weight: 300; }
+.wish-meta-cell { padding: 10px 14px; color: var(--text-muted); }
+.wish-actions-cell { padding: 10px 14px; display: flex; gap: 6px; align-items: center; }
+.wish-link { color: var(--strawberry); font-size: 12px; text-decoration: none; font-weight: 500; padding: 4px 10px; border: 1px solid var(--rose); border-radius: 20px; }
+.wish-link:hover { background: var(--blush); }
+.priority-badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; white-space: nowrap; }
+.priority-need-now { background: #FFE0E6; color: #C0144A; }
+.priority-really-want { background: var(--blush); color: var(--strawberry); }
+.priority-keeping-eye { background: #F0F0FF; color: #5C5CA0; }
+
+/* INSPO VISION BOARD */
+.inspo-vision-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.inspo-tile { cursor: pointer; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; position: relative; background: linear-gradient(135deg, var(--blush), var(--champagne)); }
+.inspo-tile:hover .inspo-tile-overlay { opacity: 1; }
+.inspo-tile-img { width: 100%; height: 100%; position: relative; }
+.inspo-tile-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.inspo-tile-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 16px 16px; background: linear-gradient(transparent, rgba(28,9,20,0.85)); opacity: 0; transition: opacity 0.2s; }
+.inspo-tile-title { color: white; font-size: 13px; font-weight: 500; }
+
+/* ABOUT ME */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.about-card { background: white; border-radius: 20px; padding: 24px; border: 1px solid rgba(240,67,110,0.1); }
+.about-card-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--strawberry); margin-bottom: 16px; font-weight: 500; }
+.about-textarea { width: 100%; min-height: 120px; border: 1.5px solid var(--blush); border-radius: 12px; padding: 14px; font-family: inherit; font-size: 13px; color: var(--plum); resize: vertical; background: var(--cream); }
+.about-textarea:focus { outline: none; border-color: var(--strawberry); }
+.about-stats-card { grid-column: span 2; }
+.about-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.about-stat { text-align: center; padding: 16px; background: var(--cream); border-radius: 12px; }
+.about-stat-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--strawberry); margin-bottom: 4px; }
+.about-stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
 /* WISHLIST */
 .wish-card {
@@ -961,32 +1019,39 @@ body {
   <div class="sidebar-nav">
     <div class="nav-section-label">Overview</div>
     <div class="nav-item active" onclick="showSection('dashboard')">
-      <span class="nav-icon">🏠</span> Dashboard
+      dashboard
     </div>
-    <div class="nav-section-label">My Collection</div>
+    <div class="nav-section-label">collection</div>
     <div class="nav-item" onclick="showSection('palettes')">
-      <span class="nav-icon">👁️</span> Palette Inventory
+      palette inventory
     </div>
     <div class="nav-item" onclick="showSection('wishlist')">
-      <span class="nav-icon">🛍️</span> Wish List
+      wish list
     </div>
     <div class="nav-section-label">Content</div>
     <div class="nav-item" onclick="showSection('ideas')">
-      <span class="nav-icon">💡</span> Content Ideas
+      content ideas
     </div>
     <div class="nav-item" onclick="showSection('reviews')">
-      <span class="nav-icon">📖</span> Reviews & Tutorials
+      reviews & tutorials
     </div>
     <div class="nav-item" onclick="showSection('trends')">
-      <span class="nav-icon">📈</span> Trends
+      trends
     </div>
-    <div class="nav-section-label">Inspiration</div>
+    <div class="nav-section-label">inspiration</div>
     <div class="nav-item" onclick="showSection('inspo')">
-      <span class="nav-icon">🌸</span> Inspo Board
+      inspo board
+    </div>
+    <div class="nav-section-label">me</div>
+    <div class="nav-item" onclick="showSection('about')">
+      about me
+    </div>
+    <div class="nav-item" onclick="showSection('roster')">
+      the roster
     </div>
   </div>
   <div class="sidebar-footer">
-    <p>your creative HQ 💄<br>by bica, always</p>
+    <p>your creative hq<br>by bica, always</p>
   </div>
 </nav>
 
@@ -997,8 +1062,8 @@ body {
   <section id="dashboard" class="section active">
     <div class="page-header">
       <div>
-        <div class="page-title" id="greeting-title">Good evening, <span>bica</span> ✨</div>
-        <div class="page-subtitle">Your creative headquarters</div>
+        <div class="page-title" id="greeting-title">good evening, <span>bica</span></div>
+        <div class="page-subtitle">your creative headquarters</div>
       </div>
     </div>
     <div class="content">
@@ -1007,47 +1072,43 @@ body {
         <p>the bold and the dreamy</p>
       </div>
       <div class="stats-row">
-        <div class="stat-card">
-          <div class="stat-icon">💄</div>
+        <div class="stat-card" onclick="showSection('palettes')" style="cursor:pointer;">
           <div class="stat-num" id="stat-palettes">0</div>
-          <div class="stat-label">Palettes in collection</div>
+          <div class="stat-label">palettes in collection</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">💡</div>
+        <div class="stat-card" onclick="showSection('ideas')" style="cursor:pointer;">
           <div class="stat-num" id="stat-ideas">0</div>
-          <div class="stat-label">Content ideas</div>
+          <div class="stat-label">content ideas</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">🛍️</div>
+        <div class="stat-card" onclick="showSection('wishlist')" style="cursor:pointer;">
           <div class="stat-num" id="stat-wishes">0</div>
-          <div class="stat-label">On the wish list</div>
+          <div class="stat-label">on the wish list</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">🌸</div>
+        <div class="stat-card" onclick="showSection('inspo')" style="cursor:pointer;">
           <div class="stat-num" id="stat-inspo">0</div>
-          <div class="stat-label">Inspo saves</div>
+          <div class="stat-label">inspo saves</div>
         </div>
       </div>
       <div class="pillars-row">
-        <div class="pillar-mini p1" onclick="filterIdeasByPillar('Magazine Moment'); showSection('ideas')">
-          <div class="pillar-mini-emoji">🌸</div>
-          <h4>Magazine Moment</h4>
-          <p>Elevated, editorial looks</p>
+        <div class="pillar-mini p1" onclick="filterIdeasByPillar('magazine moment'); showSection('ideas')">
+          
+          <h4>magazine moment</h4>
+          <p>elevated, editorial looks</p>
         </div>
-        <div class="pillar-mini p2" onclick="filterIdeasByPillar('Everyday Color'); showSection('ideas')">
-          <div class="pillar-mini-emoji">🩷</div>
-          <h4>Everyday Color</h4>
-          <p>Color in everyday life</p>
+        <div class="pillar-mini p2" onclick="filterIdeasByPillar('everyday color'); showSection('ideas')">
+          
+          <h4>everyday color</h4>
+          <p>color in everyday life</p>
         </div>
-        <div class="pillar-mini p3" onclick="filterIdeasByPillar('Smokey Experiments'); showSection('ideas')">
-          <div class="pillar-mini-emoji">👁️</div>
-          <h4>Smokey Experiments</h4>
-          <p>Explore & try new styles</p>
+        <div class="pillar-mini p3" onclick="filterIdeasByPillar('smokey experiments'); showSection('ideas')">
+          
+          <h4>smokey experiments</h4>
+          <p>explore & try new styles</p>
         </div>
-        <div class="pillar-mini p4" onclick="filterIdeasByPillar('Palette Stories'); showSection('ideas')">
-          <div class="pillar-mini-emoji">✨</div>
-          <h4>Palette Stories</h4>
-          <p>Reviews & comparisons</p>
+        <div class="pillar-mini p4" onclick="filterIdeasByPillar('palette stories'); showSection('ideas')">
+          
+          <h4>palette stories</h4>
+          <p>reviews & comparisons</p>
         </div>
       </div>
     </div>
@@ -1057,24 +1118,24 @@ body {
   <section id="palettes" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Palette <span>Inventory</span></div>
-        <div class="page-subtitle">Your eyeshadow collection</div>
+        <div class="page-title">palette <span>inventory</span></div>
+        <div class="page-subtitle">your eyeshadow collection</div>
       </div>
-      <button class="btn-primary" onclick="openModal('palette')">+ Add Palette</button>
+      <button class="btn-primary" onclick="openModal('palette')">+ add palette</button>
     </div>
     <div class="content">
       <div class="filters-bar">
         <input class="search-input" id="palette-search" placeholder="🔍 Search palettes..." oninput="renderPalettes()">
-        <button class="filter-btn active" onclick="setPaletteFilter('all', this)">All</button>
-        <button class="filter-btn" onclick="setPaletteFilter('warm', this)">Warm</button>
-        <button class="filter-btn" onclick="setPaletteFilter('pinky-warm', this)">Pinky Warm</button>
-        <button class="filter-btn" onclick="setPaletteFilter('pink', this)">Pink</button>
-        <button class="filter-btn" onclick="setPaletteFilter('cool', this)">Cool</button>
-        <button class="filter-btn" onclick="setPaletteFilter('neutral', this)">Neutral</button>
-        <button class="filter-btn" onclick="setPaletteFilter('jewel', this)">Jewel Tones</button>
-        <button class="filter-btn" onclick="setPaletteFilter('colorful', this)">Colorful</button>
-        <button class="filter-btn" onclick="setPaletteFilter('warm-neutral', this)">Warm Neutrals</button>
-        <button class="filter-btn" onclick="setPaletteFilter('everyday-neutral', this)">Everyday Neutrals</button>
+        <button class="filter-btn active" onclick="setPaletteFilter('all', this)">all</button>
+        <button class="filter-btn" onclick="setPaletteFilter('warm', this)">warm</button>
+        <button class="filter-btn" onclick="setPaletteFilter('pinky-warm', this)">pinky warm</button>
+        <button class="filter-btn" onclick="setPaletteFilter('pink', this)">pink</button>
+        <button class="filter-btn" onclick="setPaletteFilter('cool', this)">cool</button>
+        <button class="filter-btn" onclick="setPaletteFilter('neutral', this)">neutral</button>
+        <button class="filter-btn" onclick="setPaletteFilter('jewel', this)">jewel tones</button>
+        <button class="filter-btn" onclick="setPaletteFilter('colorful', this)">colorful</button>
+        <button class="filter-btn" onclick="setPaletteFilter('warm-neutral', this)">warm neutrals</button>
+        <button class="filter-btn" onclick="setPaletteFilter('everyday-neutral', this)">everyday neutrals</button>
       </div>
       <div class="items-grid" id="palettes-grid"></div>
     </div>
@@ -1084,32 +1145,38 @@ body {
   <section id="wishlist" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Wish <span>List</span></div>
-        <div class="page-subtitle">Palettes you're eyeing 👀</div>
+        <div class="page-title">wish <span>list</span></div>
+        
       </div>
-      <button class="btn-primary" onclick="openModal('wish')">+ Add to Wish List</button>
+      <button class="btn-primary" onclick="openModal('wish')">+ Add to wish list</button>
     </div>
     <div class="content">
       <div id="wishlist-container"></div>
     </div>
   </section>
 
-  <!-- CONTENT IDEAS -->
+  <!-- content IDEAS -->
   <section id="ideas" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Content <span>Ideas</span></div>
-        <div class="page-subtitle">Every spark of inspiration, caught</div>
+        <div class="page-title">content <span>ideas</span></div>
+        <div class="page-subtitle">every spark of inspiration, caught</div>
       </div>
-      <button class="btn-primary" onclick="openModal('idea')">+ Add Idea</button>
+      <button class="btn-primary" onclick="openModal('idea')">+ add idea</button>
     </div>
     <div class="content">
       <div class="filters-bar">
-        <button class="filter-btn active" onclick="setIdeaFilter('all', this)">All</button>
-        <button class="filter-btn" onclick="setIdeaFilter('Magazine Moment', this)">🌸 Magazine Moment</button>
-        <button class="filter-btn" onclick="setIdeaFilter('Everyday Color', this)">🩷 Everyday Color</button>
-        <button class="filter-btn" onclick="setIdeaFilter('Smokey Experiments', this)">👁️ Smokey Experiments</button>
-        <button class="filter-btn" onclick="setIdeaFilter('Palette Stories', this)">✨ Palette Stories</button>
+        <button class="filter-btn active" onclick="setIdeaFilter('all', this)">all</button>
+        <button class="filter-btn" onclick="setIdeaFilter('magazine moment', this)">magazine moment</button>
+        <button class="filter-btn" onclick="setIdeaFilter('everyday color', this)">everyday color</button>
+        <button class="filter-btn" onclick="setIdeaFilter('smokey experiments', this)">smokey experiments</button>
+        <button class="filter-btn" onclick="setIdeaFilter('palette stories', this)">palette stories</button>
+        <button class="filter-btn" onclick="setIdeaFilter('trend report', this)">trend report</button>
+        <button class="filter-btn" onclick="setIdeaFilter('muse of the moment', this)">muse of the moment</button>
+        <button class="filter-btn" onclick="setIdeaFilter('behind the brush', this)">behind the brush</button>
+        <button class="filter-btn" onclick="setIdeaFilter('brand crush', this)">brand crush</button>
+        <button class="filter-btn" onclick="setIdeaFilter('label love', this)">label love</button>
+        <button class="filter-btn" onclick="setIdeaFilter('class is in session', this)">class is in session</button>
       </div>
       <div id="ideas-container" style="display:flex;flex-direction:column;gap:12px;"></div>
     </div>
@@ -1119,10 +1186,10 @@ body {
   <section id="reviews" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Reviews & <span>Tutorials</span></div>
-        <div class="page-subtitle">Draft and track your content</div>
+        <div class="page-title">reviews & <span>tutorials</span></div>
+        <div class="page-subtitle">draft and track your content</div>
       </div>
-      <button class="btn-primary" onclick="openModal('review')">+ Add Content</button>
+      <button class="btn-primary" onclick="openModal('review')">+ add content</button>
     </div>
     <div class="content">
       <div class="content-list" id="reviews-container"></div>
@@ -1133,13 +1200,82 @@ body {
   <section id="trends" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Trend <span>Tracker</span></div>
-        <div class="page-subtitle">What's hot in the beauty world</div>
+        <div class="page-title">trend <span>tracker</span></div>
+        <div class="page-subtitle">what's hot in the beauty world</div>
       </div>
-      <button class="btn-primary" onclick="openModal('trend')">+ Add Trend</button>
+      <button class="btn-primary" onclick="openModal('trend')">+ add trend</button>
     </div>
     <div class="content">
       <div id="trends-container"></div>
+    </div>
+  </section>
+
+  <!-- THE ROSTER -->
+  <section id="roster" class="section">
+    <div class="page-header">
+      <div>
+        <div class="page-title">the <span>roster</span></div>
+        <div class="page-subtitle">creators you watch, learn from & love</div>
+      </div>
+      <button class="btn-primary" onclick="openModal('roster')">+ add creator</button>
+    </div>
+    <div class="content">
+      <div id="roster-grid" class="roster-grid"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section id="about" class="section">
+    <div class="page-header">
+      <div>
+        <div class="page-title">about <span>me</span></div>
+        <div class="page-subtitle">the person behind the palettes</div>
+      </div>
+      <button class="btn-primary" onclick="saveAbout()">save changes</button>
+    </div>
+    <div class="content">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-card-title">bio</div>
+          <textarea id="ab-bio" class="about-textarea" placeholder="who is by bica? what's your story, your aesthetic, your why..."></textarea>
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">skin info</div>
+          <div class="form-row" style="margin-bottom:14px;">
+            <div class="form-group">
+              <label>skin tone</label>
+              <select id="ab-tone">
+                <option value="">select...</option>
+                <option>fair</option><option>light</option><option>light medium</option>
+                <option>medium</option><option>medium tan</option><option>tan</option>
+                <option>deep tan</option><option>deep</option><option>rich deep</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>undertone</label>
+              <select id="ab-undertone">
+                <option value="">select...</option>
+                <option>warm</option><option>neutral</option><option>cool</option><option>olive</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>skin type</label>
+            <select id="ab-skintype">
+              <option value="">select...</option>
+              <option>oily</option><option>dry</option><option>combination</option><option>normal</option><option>sensitive</option>
+            </select>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">go-to products</div>
+          <textarea id="ab-gotos" class="about-textarea" placeholder="your ride-or-die products outside of palettes — primers, liners, lip products, setting sprays..."></textarea>
+        </div>
+        <div class="about-card about-stats-card">
+          <div class="about-card-title">collection stats</div>
+          <div class="about-stats-grid" id="about-stats"></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1147,13 +1283,13 @@ body {
   <section id="inspo" class="section">
     <div class="page-header">
       <div>
-        <div class="page-title">Inspo <span>Board</span></div>
-        <div class="page-subtitle">Your moodboard, your vision</div>
+        <div class="page-title">inspo <span>board</span></div>
+        <div class="page-subtitle">your moodboard, your vision</div>
       </div>
-      <button class="btn-primary" onclick="openModal('inspo')">+ Add Inspo</button>
+      <button class="btn-primary" onclick="openModal('inspo')">+ add inspo</button>
     </div>
     <div class="content">
-      <div class="inspo-grid" id="inspo-grid"></div>
+      <div class="inspo-vision-grid" id="inspo-grid"></div>
     </div>
   </section>
 
@@ -1165,8 +1301,8 @@ body {
 <div class="modal-overlay" id="modal-palette">
   <div class="modal">
     <div class="modal-header">
-      <h3 id="palette-modal-title">Add a Palette 💄</h3>
-      <p id="palette-modal-sub">Log a new palette to your collection</p>
+      <h3 id="palette-modal-title">add a palette</h3>
+      <p id="palette-modal-sub">log a new palette to your collection</p>
       <button class="modal-close" onclick="closeModal('palette')">×</button>
     </div>
     <div class="modal-body">
@@ -1207,23 +1343,23 @@ body {
       <div class="form-group">
         <label>Vibe <span style="font-size:10px;color:var(--text-muted);text-transform:none;letter-spacing:0">(select all that apply)</span></label>
         <div class="multi-select-grid" id="p-vibe-grid">
-          <label class="multi-chip"><input type="checkbox" value="everyday"> ✨ Everyday</label>
-          <label class="multi-chip"><input type="checkbox" value="glam"> 💫 Glam</label>
-          <label class="multi-chip"><input type="checkbox" value="night-out"> 🖤 Night Out</label>
-          <label class="multi-chip"><input type="checkbox" value="night-to-day"> 🌅 Night to Day</label>
-          <label class="multi-chip"><input type="checkbox" value="editorial"> 📸 Editorial</label>
-          <label class="multi-chip"><input type="checkbox" value="smokey"> 👁️ Smokey</label>
-          <label class="multi-chip"><input type="checkbox" value="colorful-fun"> 🌈 Colorful Fun</label>
-          <label class="multi-chip"><input type="checkbox" value="soft-romantic"> 🌸 Soft & Romantic</label>
-          <label class="multi-chip"><input type="checkbox" value="dreamy"> ☁️ Dreamy</label>
-          <label class="multi-chip"><input type="checkbox" value="dark-fantasy"> 🖤 Dark Fantasy</label>
-          <label class="multi-chip"><input type="checkbox" value="celestial"> 🌟 Celestial</label>
-          <label class="multi-chip"><input type="checkbox" value="intergalactic"> 🚀 Intergalactic</label>
-          <label class="multi-chip"><input type="checkbox" value="summer"> ☀️ Summer</label>
-          <label class="multi-chip"><input type="checkbox" value="winter"> ❄️ Winter</label>
-          <label class="multi-chip"><input type="checkbox" value="spring"> 🌸 Spring</label>
-          <label class="multi-chip"><input type="checkbox" value="fall"> 🍂 Fall</label>
-          <label class="multi-chip"><input type="checkbox" value="brown-girl-friendly"> 🤎 Brown Girl Friendly</label>
+          <label class="multi-chip"><input type="checkbox" value="everyday"> everyday</label>
+          <label class="multi-chip"><input type="checkbox" value="glam"> glam</label>
+          <label class="multi-chip"><input type="checkbox" value="night-out"> night out</label>
+          <label class="multi-chip"><input type="checkbox" value="night-to-day"> night to day</label>
+          <label class="multi-chip"><input type="checkbox" value="editorial"> editorial</label>
+          <label class="multi-chip"><input type="checkbox" value="smokey"> smokey</label>
+          <label class="multi-chip"><input type="checkbox" value="colorful-fun"> colorful fun</label>
+          <label class="multi-chip"><input type="checkbox" value="soft-romantic"> soft & romantic</label>
+          <label class="multi-chip"><input type="checkbox" value="dreamy"> dreamy</label>
+          <label class="multi-chip"><input type="checkbox" value="dark-fantasy"> dark fantasy</label>
+          <label class="multi-chip"><input type="checkbox" value="celestial"> celestial</label>
+          <label class="multi-chip"><input type="checkbox" value="intergalactic"> intergalactic</label>
+          <label class="multi-chip"><input type="checkbox" value="summer"> summer</label>
+          <label class="multi-chip"><input type="checkbox" value="winter"> winter</label>
+          <label class="multi-chip"><input type="checkbox" value="spring"> spring</label>
+          <label class="multi-chip"><input type="checkbox" value="fall"> fall</label>
+          <label class="multi-chip"><input type="checkbox" value="brown-girl-friendly"> brown girl friendly</label>
         </div>
       </div>
       <div class="form-row">
@@ -1238,10 +1374,10 @@ body {
         <div class="form-group">
           <label>Content Pillar</label>
           <select id="p-pillar">
-            <option>Magazine Moment</option>
-            <option>Everyday Color</option>
-            <option>Smokey Experiments</option>
-            <option>Palette Stories</option>
+            <option>magazine moment</option>
+            <option>everyday color</option>
+            <option>smokey experiments</option>
+            <option>palette stories</option>
           </select>
         </div>
       </div>
@@ -1260,7 +1396,7 @@ body {
         <input type="text" id="p-img" placeholder="Right-click any image online → Copy Image Address → paste here">
       </div>
       <div class="form-group">
-        <label>My Review</label>
+        <label>my review</label>
         <textarea id="p-review" placeholder="What do you think of this palette? Formula, pigmentation, longevity, favorites shades..." style="min-height:100px;"></textarea>
       </div>
       <div class="form-group">
@@ -1269,8 +1405,8 @@ body {
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('palette')">Cancel</button>
-      <button class="btn-primary" id="palette-save-btn" onclick="savePalette()">Add to Collection ✨</button>
+      <button class="btn-secondary" onclick="closeModal('palette')">cancel</button>
+      <button class="btn-primary" id="palette-save-btn" onclick="savePalette()">add to collection</button>
     </div>
   </div>
 </div>
@@ -1279,8 +1415,8 @@ body {
 <div class="modal-overlay" id="modal-idea">
   <div class="modal">
     <div class="modal-header">
-      <h3 id="idea-modal-title">New Content Idea 💡</h3>
-      <p id="idea-modal-sub">Capture the spark before it fades</p>
+      <h3 id="idea-modal-title">new content idea</h3>
+      <p id="idea-modal-sub">capture the spark before it fades</p>
       <button class="modal-close" onclick="closeModal('idea')">×</button>
     </div>
     <div class="modal-body">
@@ -1292,19 +1428,19 @@ body {
         <div class="form-group">
           <label>Content Pillar</label>
           <select id="i-pillar">
-            <option>Magazine Moment</option>
-            <option>Everyday Color</option>
-            <option>Smokey Experiments</option>
-            <option>Palette Stories</option>
+            <option>magazine moment</option>
+            <option>everyday color</option>
+            <option>smokey experiments</option>
+            <option>palette stories</option>
           </select>
         </div>
         <div class="form-group">
           <label>Status</label>
           <select id="i-status">
-            <option value="status-idea">💭 Idea</option>
-            <option value="status-progress">🎬 In Progress</option>
-            <option value="status-filmed">📹 Filmed</option>
-            <option value="status-posted">✅ Posted</option>
+            <option value="status-idea">idea</option>
+            <option value="status-progress">in progress</option>
+            <option value="status-filmed">filmed</option>
+            <option value="status-posted">posted</option>
           </select>
         </div>
       </div>
@@ -1314,8 +1450,8 @@ body {
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('idea')">Cancel</button>
-      <button class="btn-primary" id="idea-save-btn" onclick="saveIdea()">Save Idea 🌸</button>
+      <button class="btn-secondary" onclick="closeModal('idea')">cancel</button>
+      <button class="btn-primary" id="idea-save-btn" onclick="saveIdea()">save idea</button>
     </div>
   </div>
 </div>
@@ -1324,86 +1460,119 @@ body {
 <div class="modal-overlay" id="modal-wish">
   <div class="modal">
     <div class="modal-header">
-      <h3 id="wish-modal-title">Add to Wish List 🛍️</h3>
-      <p id="wish-modal-sub">Something you're lusting after</p>
+      <h3 id="wish-modal-title">add to wish list</h3>
       <button class="modal-close" onclick="closeModal('wish')">×</button>
     </div>
     <div class="modal-body">
       <div class="form-row">
         <div class="form-group">
-          <label>Brand</label>
+          <label>brand</label>
           <input type="text" id="w-brand" placeholder="e.g. Pat McGrath">
         </div>
         <div class="form-group">
-          <label>Palette Name</label>
+          <label>item</label>
           <input type="text" id="w-name" placeholder="e.g. Mothership VII">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>Price (optional)</label>
-          <input type="text" id="w-price" placeholder="e.g. $68">
+          <label>retailer</label>
+          <input type="text" id="w-retailer" placeholder="e.g. Sephora, ULTA, brand site">
         </div>
         <div class="form-group">
-          <label>Priority</label>
+          <label>price (optional)</label>
+          <input type="text" id="w-price" placeholder="e.g. $68">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>priority</label>
           <select id="w-priority">
-            <option>🔥 Need it NOW</option>
-            <option>💕 Really want it</option>
-            <option>👀 Keeping an eye</option>
+            <option value="need-now">need it now</option>
+            <option value="really-want">really want it</option>
+            <option value="keeping-eye">keeping an eye</option>
           </select>
+        </div>
+        <div class="form-group">
+          <label>link to product</label>
+          <input type="text" id="w-url" placeholder="paste URL">
         </div>
       </div>
       <div class="form-group">
-        <label>Why I want it</label>
-        <textarea id="w-notes" placeholder="What drew you to this palette?"></textarea>
+        <label>image URL (optional)</label>
+        <input type="text" id="w-img" placeholder="paste an image link">
+      </div>
+      <div class="form-group">
+        <label>why i want it</label>
+        <textarea id="w-notes" placeholder="what drew you to this?"></textarea>
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('wish')">Cancel</button>
-      <button class="btn-primary" id="wish-save-btn" onclick="saveWish()">Add to List 🛍️</button>
+      <button class="btn-secondary" onclick="closeModal('wish')">cancel</button>
+      <button class="btn-primary" id="wish-save-btn" onclick="saveWish()">add to list</button>
     </div>
   </div>
 </div>
 
 <!-- REVIEW MODAL -->
 <div class="modal-overlay" id="modal-review">
-  <div class="modal">
+  <div class="modal" style="max-width:600px;">
     <div class="modal-header">
-      <h3 id="review-modal-title">Add Content 📖</h3>
-      <p id="review-modal-sub">Draft a review or tutorial</p>
+      <h3 id="review-modal-title">add content</h3>
       <button class="modal-close" onclick="closeModal('review')">×</button>
     </div>
     <div class="modal-body">
       <div class="form-group">
-        <label>Title</label>
+        <label>title</label>
         <input type="text" id="r-title" placeholder="e.g. Natasha Denona Bloom — Honest Review">
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>Type</label>
+          <label>type</label>
           <select id="r-type">
-            <option value="type-review">Review</option>
-            <option value="type-tutorial">Tutorial</option>
+            <option value="written-review">written review</option>
+            <option value="written-tutorial">written tutorial</option>
+            <option value="video-review">video review</option>
+            <option value="video-tutorial">video tutorial</option>
+            <option value="ig-post">ig post</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Status</label>
+          <label>status</label>
           <select id="r-status">
-            <option value="status-idea">💭 Draft Idea</option>
-            <option value="status-progress">✍️ Writing</option>
-            <option value="status-filmed">📹 Filmed</option>
-            <option value="status-posted">✅ Published</option>
+            <option value="status-idea">draft idea</option>
+            <option value="status-progress">writing</option>
+            <option value="status-filmed">filmed</option>
+            <option value="status-posted">published</option>
           </select>
         </div>
       </div>
       <div class="form-group">
-        <label>Notes / Draft</label>
-        <textarea id="r-notes" placeholder="Key points, palette used, look description..." style="min-height:120px;"></textarea>
+        <label>notes</label>
+        <textarea id="r-notes" placeholder="key points, palette used, look description..." style="min-height:80px;"></textarea>
+      </div>
+      <div class="form-group">
+        <label>draft</label>
+        <textarea id="r-draft" placeholder="write your actual draft here..." style="min-height:120px;"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>youtube link</label>
+          <input type="text" id="r-yt" placeholder="paste YouTube URL">
+        </div>
+        <div class="form-group">
+          <label>tiktok link</label>
+          <input type="text" id="r-tt" placeholder="paste TikTok URL">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>instagram link</label>
+        <input type="text" id="r-ig" placeholder="paste Instagram URL">
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('review')">Cancel</button>
-      <button class="btn-primary" id="review-save-btn" onclick="saveReview()">Save Content 📖</button>
+      <button class="btn-secondary" onclick="closeModal('review')">cancel</button>
+      <button class="btn-primary" id="review-save-btn" onclick="saveReview()">save content</button>
     </div>
   </div>
 </div>
@@ -1412,8 +1581,8 @@ body {
 <div class="modal-overlay" id="modal-trend">
   <div class="modal">
     <div class="modal-header">
-      <h3 id="trend-modal-title">Track a Trend 📈</h3>
-      <p id="trend-modal-sub">What's buzzing in beauty right now</p>
+      <h3 id="trend-modal-title">track a trend</h3>
+      <p id="trend-modal-sub">what's buzzing in beauty right now</p>
       <button class="modal-close" onclick="closeModal('trend')">×</button>
     </div>
     <div class="modal-body">
@@ -1425,9 +1594,9 @@ body {
         <div class="form-group">
           <label>Heat Level</label>
           <select id="tr-heat">
-            <option value="hot">🔥 On Fire</option>
-            <option value="warm">✨ Rising</option>
-            <option value="cool">👀 Watching</option>
+            <option value="hot">on fire</option>
+            <option value="warm">rising</option>
+            <option value="cool">watching</option>
           </select>
         </div>
         <div class="form-group">
@@ -1441,13 +1610,21 @@ body {
         </div>
       </div>
       <div class="form-group">
-        <label>Notes</label>
-        <textarea id="tr-notes" placeholder="What's the trend about? How can By Bica put her spin on it?"></textarea>
+        <label>original post url</label>
+        <input type="text" id="tr-url" placeholder="link to the og post">
+      </div>
+      <div class="form-group">
+        <label>image snapshot url (optional)</label>
+        <input type="text" id="tr-img" placeholder="paste an image link">
+      </div>
+      <div class="form-group">
+        <label>notes</label>
+        <textarea id="tr-notes" placeholder="what's the trend about? how can by bica put her spin on it?"></textarea>
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('trend')">Cancel</button>
-      <button class="btn-primary" id="trend-save-btn" onclick="saveTrend()">Track It 📈</button>
+      <button class="btn-secondary" onclick="closeModal('trend')">cancel</button>
+      <button class="btn-primary" id="trend-save-btn" onclick="saveTrend()">track it</button>
     </div>
   </div>
 </div>
@@ -1456,8 +1633,8 @@ body {
 <div class="modal-overlay" id="modal-inspo">
   <div class="modal">
     <div class="modal-header">
-      <h3 id="inspo-modal-title">Add Inspo 🌸</h3>
-      <p id="inspo-modal-sub">Save something that inspires you</p>
+      <h3 id="inspo-modal-title">add inspo</h3>
+      <p id="inspo-modal-sub">save something that inspires you</p>
       <button class="modal-close" onclick="closeModal('inspo')">×</button>
     </div>
     <div class="modal-body">
@@ -1474,13 +1651,59 @@ body {
         <input type="text" id="in-emoji" placeholder="e.g. 🌸 or 💄 or ✨" maxlength="4">
       </div>
       <div class="form-group">
-        <label>Notes</label>
-        <textarea id="in-notes" placeholder="What do you love about this? What does it inspire?"></textarea>
+        <label>source url</label>
+        <input type="text" id="in-url" placeholder="link to the original post or tutorial">
+      </div>
+      <div class="form-group">
+        <label>notes</label>
+        <textarea id="in-notes" placeholder="what do you love about this? what does it inspire?"></textarea>
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('inspo')">Cancel</button>
-      <button class="btn-primary" id="inspo-save-btn" onclick="saveInspo()">Save Inspo 🌸</button>
+      <button class="btn-secondary" onclick="closeModal('inspo')">cancel</button>
+      <button class="btn-primary" id="inspo-save-btn" onclick="saveInspo()">save inspo</button>
+    </div>
+  </div>
+</div>
+
+<!-- ROSTER MODAL -->
+<div class="modal-overlay" id="modal-roster">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="roster-modal-title">add to the roster</h3>
+      <button class="modal-close" onclick="closeModal('roster')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label>name</label>
+          <input type="text" id="ro-name" placeholder="e.g. Jackie Aina">
+        </div>
+        <div class="form-group">
+          <label>handle</label>
+          <input type="text" id="ro-handle" placeholder="e.g. @jackieaina">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>tiktok</label>
+        <input type="text" id="ro-tiktok" placeholder="paste TikTok URL">
+      </div>
+      <div class="form-group">
+        <label>instagram</label>
+        <input type="text" id="ro-instagram" placeholder="paste Instagram URL">
+      </div>
+      <div class="form-group">
+        <label>youtube</label>
+        <input type="text" id="ro-youtube" placeholder="paste YouTube URL">
+      </div>
+      <div class="form-group">
+        <label>why you follow them</label>
+        <textarea id="ro-notes" placeholder="what do you love about their content? what do you learn from them?"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeModal('roster')">cancel</button>
+      <button class="btn-primary" id="roster-save-btn" onclick="saveRoster()">add to roster</button>
     </div>
   </div>
 </div>
@@ -1502,17 +1725,36 @@ body {
       <div id="detail-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;"></div>
       <div id="detail-rating" style="font-size:20px;margin-bottom:16px;"></div>
       <div id="detail-review" style="display:none;">
-        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--strawberry);margin-bottom:8px;font-weight:500;">My Review</p>
+        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--strawberry);margin-bottom:8px;font-weight:500;">my review</p>
         <p id="detail-review-text" style="font-size:14px;color:var(--plum);line-height:1.7;margin-bottom:20px;"></p>
       </div>
       <div id="detail-notes" style="display:none;">
-        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;font-weight:500;">Content Ideas</p>
+        <p style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;font-weight:500;">content ideas</p>
         <p id="detail-notes-text" style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;font-style:italic;"></p>
       </div>
     </div>
     <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeModal('palette-detail')">Close</button>
-      <button class="btn-primary" id="detail-edit-btn">✏️ Edit Palette</button>
+      <button class="btn-secondary" onclick="closeModal('palette-detail')">close</button>
+      <button class="btn-primary" id="detail-edit-btn">edit palette</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSPO DETAIL MODAL -->
+<div class="modal-overlay" id="modal-inspo-detail">
+  <div class="modal" style="max-width:600px;padding:0;overflow:hidden;">
+    <img id="inspo-detail-img" src="" style="width:100%;max-height:340px;object-fit:cover;display:none;">
+    <div style="padding:28px 32px 24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <h3 id="inspo-detail-title" style="font-size:24px;"></h3>
+        <button class="modal-close" onclick="closeModal('inspo-detail')" style="position:relative;top:0;right:0;margin-left:16px;">×</button>
+      </div>
+      <p id="inspo-detail-notes" style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;"></p>
+      <a id="inspo-detail-link" href="#" target="_blank" class="btn-secondary" style="display:none;margin-bottom:20px;text-decoration:none;font-size:13px;">view original source</a>
+      <div style="display:flex;gap:10px;padding-top:16px;border-top:1px solid var(--blush);">
+        <button id="inspo-detail-edit" class="btn-secondary" style="flex:1;">edit</button>
+        <button id="inspo-detail-delete" class="action-btn delete" style="flex:1;">remove</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1531,7 +1773,8 @@ let data = {
   wishlist: [],
   reviews: [],
   trends: [],
-  inspo: []
+  inspo: [],
+  roster: []
 };
 
 // ---- PERSISTENCE ----
@@ -1540,7 +1783,7 @@ async function saveData() {
 }
 
 async function loadData() {
-  const tables = ['palettes', 'ideas', 'wishlist', 'reviews', 'trends', 'inspo'];
+  const tables = ['palettes', 'ideas', 'wishlist', 'reviews', 'trends', 'inspo', 'roster'];
   for (const table of tables) {
     const { data: rows, error } = await sb.from(table).select('*').order('created_at', { ascending: true });
     if (!error && rows) data[table] = rows;
@@ -1564,10 +1807,10 @@ let currentRating = 0;
 let editingId = null;
 
 const PILLAR_COLORS = {
-  'Magazine Moment': '#F4547A',
-  'Everyday Color': '#F9A8C0',
-  'Smokey Experiments': '#3D1A28',
-  'Palette Stories': '#C9963A'
+  'magazine moment': '#F4547A',
+  'everyday color': '#F9A8C0',
+  'smokey experiments': '#3D1A28',
+  'palette stories': '#C9963A'
 };
 
 const PALETTE_GRADIENTS = {
@@ -1611,12 +1854,14 @@ function closeModal(type) {
   // Reset titles
   const titles = {
     'palette-detail': [null, null, null],
-    palette: ['Add a Palette 💄', 'Log a new palette to your collection', 'Add to Collection ✨'],
-    idea: ['New Content Idea 💡', 'Capture the spark before it fades', 'Save Idea 🌸'],
-    wish: ['Add to Wish List 🛍️', "Something you're lusting after", 'Add to List 🛍️'],
-    review: ['Add Content 📖', 'Draft a review or tutorial', 'Save Content 📖'],
-    trend: ['Track a Trend 📈', "What's buzzing in beauty right now", 'Track It 📈'],
-    inspo: ['Add Inspo 🌸', 'Save something that inspires you', 'Save Inspo 🌸'],
+    'roster': ['add to the roster', null, 'add to roster'],
+    'inspo-detail': [null, null, null],
+    palette: ['add a palette', 'log a new palette to your collection', 'add to collection'],
+    idea: ['new content idea', 'capture the spark before it fades', 'save idea'],
+    wish: ['Add to wish list 🛍️', "something you're lusting after", 'add to list'],
+    review: ['add content', 'draft a review or tutorial', 'save content'],
+    trend: ['track a trend', "what's buzzing in beauty right now", 'track it'],
+    inspo: ['add inspo', 'save something that inspires you', 'save inspo'],
   };
   if (titles[type]) {
     const [title, sub, btn] = titles[type];
@@ -1638,7 +1883,7 @@ function clearForm(type) {
   updateStars(0);
 }
 
-// Close modal on overlay click
+// close modal on overlay click
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
   overlay.addEventListener('click', function(e) {
     if (e.target === this) {
@@ -1709,7 +1954,7 @@ function editPalette(id) {
 
   document.getElementById('palette-modal-title').textContent = 'Edit Palette ✏️';
   document.getElementById('palette-modal-sub').textContent = 'Update your palette details';
-  document.getElementById('palette-save-btn').textContent = 'Save Changes ✨';
+  document.getElementById('palette-save-btn').textContent = 'save changes';
 
   document.getElementById('p-brand').value = p.brand;
   document.getElementById('p-name').value = p.name;
@@ -1766,8 +2011,11 @@ async function saveWish() {
     id: editingId || Date.now(),
     brand: document.getElementById('w-brand').value.trim(),
     name,
+    retailer: document.getElementById('w-retailer').value.trim(),
     price: document.getElementById('w-price').value.trim(),
     priority: document.getElementById('w-priority').value,
+    url: document.getElementById('w-url').value.trim(),
+    img: document.getElementById('w-img').value.trim(),
     notes: document.getElementById('w-notes').value.trim()
   };
   await dbSave('wishlist', wish);
@@ -1790,7 +2038,11 @@ async function saveReview() {
     title,
     type: document.getElementById('r-type').value,
     status: document.getElementById('r-status').value,
-    notes: document.getElementById('r-notes').value.trim()
+    notes: document.getElementById('r-notes').value.trim(),
+    draft: document.getElementById('r-draft').value.trim(),
+    yt: document.getElementById('r-yt').value.trim(),
+    tt: document.getElementById('r-tt').value.trim(),
+    ig: document.getElementById('r-ig').value.trim()
   };
   await dbSave('reviews', review);
   if (editingId) {
@@ -1812,6 +2064,8 @@ async function saveTrend() {
     name,
     heat: document.getElementById('tr-heat').value,
     platform: document.getElementById('tr-platform').value,
+    url: document.getElementById('tr-url').value.trim(),
+    img: document.getElementById('tr-img').value.trim(),
     notes: document.getElementById('tr-notes').value.trim()
   };
   await dbSave('trends', trend);
@@ -1821,7 +2075,7 @@ async function saveTrend() {
   } else { data.trends.push(trend); }
   editingId = null;
   closeModal('trend');
-  renderTrends();
+  rendertrends();
   updateCounts();
 }
 
@@ -1833,7 +2087,8 @@ async function saveInspo() {
     id: editingId || Date.now(),
     title,
     img: document.getElementById('in-img').value.trim(),
-    emoji: document.getElementById('in-emoji').value.trim() || '🌸',
+    emoji: document.getElementById('in-emoji').value.trim() || '',
+    url: document.getElementById('in-url').value.trim(),
     notes: document.getElementById('in-notes').value.trim()
   };
   await dbSave('inspo', inspo);
@@ -1845,6 +2100,71 @@ async function saveInspo() {
   closeModal('inspo');
   renderInspo();
   updateCounts();
+}
+
+async function saveRoster() {
+  const name = document.getElementById('ro-name').value.trim();
+  if (!name) { alert('Add a name!'); return; }
+  const creator = {
+    id: editingId || Date.now(),
+    name,
+    handle: document.getElementById('ro-handle').value.trim(),
+    tiktok: document.getElementById('ro-tiktok').value.trim(),
+    instagram: document.getElementById('ro-instagram').value.trim(),
+    youtube: document.getElementById('ro-youtube').value.trim(),
+    notes: document.getElementById('ro-notes').value.trim()
+  };
+  await dbSave('roster', creator);
+  if (editingId) {
+    const idx = data.roster.findIndex(r => r.id === editingId);
+    if (idx !== -1) data.roster[idx] = creator;
+  } else { data.roster.push(creator); }
+  editingId = null;
+  closeModal('roster');
+  renderRoster();
+}
+
+function renderRoster() {
+  const grid = document.getElementById('roster-grid');
+  if (!grid) return;
+  if (data.roster.length === 0) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+      <h3>the roster is empty</h3>
+      <p>add the creators you watch, learn from & love</p>
+      <button class="btn-primary" onclick="openModal('roster')">+ add creator</button>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = data.roster.map(r => `
+    <div class="roster-card">
+      <div class="roster-name">${r.name}</div>
+      ${r.handle ? `<div class="roster-handle">${r.handle}</div>` : ''}
+      <div class="roster-links">
+        ${r.tiktok ? `<a href="${r.tiktok}" target="_blank" class="roster-link tiktok">tiktok</a>` : ''}
+        ${r.instagram ? `<a href="${r.instagram}" target="_blank" class="roster-link instagram">instagram</a>` : ''}
+        ${r.youtube ? `<a href="${r.youtube}" target="_blank" class="roster-link youtube">youtube</a>` : ''}
+      </div>
+      ${r.notes ? `<div class="roster-notes">${r.notes}</div>` : ''}
+      <div class="roster-actions">
+        <button class="action-btn edit" onclick="editRoster(${r.id})" style="flex:1;padding:6px;">edit</button>
+        <button class="action-btn delete" onclick="deleteItem('roster', ${r.id})" style="flex:1;padding:6px;">remove</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function editRoster(id) {
+  const r = data.roster.find(x => x.id === id);
+  if (!r) return;
+  editingId = id;
+  document.getElementById('roster-modal-title').textContent = 'edit creator';
+  document.getElementById('ro-name').value = r.name;
+  document.getElementById('ro-handle').value = r.handle || '';
+  document.getElementById('ro-tiktok').value = r.tiktok || '';
+  document.getElementById('ro-instagram').value = r.instagram || '';
+  document.getElementById('ro-youtube').value = r.youtube || '';
+  document.getElementById('ro-notes').value = r.notes || '';
+  document.getElementById('modal-roster').classList.add('open');
 }
 
 // ---- DELETE ----
@@ -1888,9 +2208,9 @@ function renderPalettes() {
   if (items.length === 0) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
       <div class="empty-icon">💄</div>
-      <h3>No palettes yet</h3>
-      <p>Start adding your collection — every palette deserves to be seen!</p>
-      <button class="btn-primary" onclick="openModal('palette')">+ Add Your First Palette</button>
+      <h3>no palettes yet</h3>
+      <p>start adding your collection — every palette deserves to be seen!</p>
+      <button class="btn-primary" onclick="openModal('palette')">+ add your first palette</button>
     </div>`;
     return;
   }
@@ -1910,12 +2230,12 @@ function renderPalettes() {
           <span class="tag ${p.condition}">${p.condition === 'new-item' ? 'Brand New' : p.condition === 'loved' ? 'Well Loved' : 'Barely Touched'}</span>
         </div>
         ${p.rating ? `<div class="item-rating">${starsHTML(p.rating)}</div>` : ''}
-        ${p.review ? `<div class="item-note" style="border-top:1px solid rgba(240,67,110,0.08);padding-top:10px;margin-top:8px;"><strong style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--strawberry);font-style:normal;">My Review</strong><br>${p.review}</div>` : ''}
+        ${p.review ? `<div class="item-note" style="border-top:1px solid rgba(240,67,110,0.08);padding-top:10px;margin-top:8px;"><strong style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--strawberry);font-style:normal;">my review</strong><br>${p.review}</div>` : ''}
         ${p.notes ? `<div class="item-note">${p.notes}</div>` : ''}
       </div>
       <div class="item-card-actions">
-        <button class="action-btn edit" onclick="event.stopPropagation();editPalette(${p.id})">✏️ Edit</button>
-        <button class="action-btn delete" onclick="event.stopPropagation();deleteItem('palettes', ${p.id})">🗑 Remove</button>
+        <button class="action-btn edit" onclick="event.stopPropagation();editPalette(${p.id})">edit</button>
+        <button class="action-btn delete" onclick="event.stopPropagation();deleteItem('palettes', ${p.id})">remove</button>
       </div>
     </div>
   `).join('');
@@ -1929,9 +2249,9 @@ function renderIdeas() {
   if (items.length === 0) {
     container.innerHTML = `<div class="empty-state">
       <div class="empty-icon">💡</div>
-      <h3>No ideas yet</h3>
-      <p>Every great look starts with a spark. Log yours here before it disappears!</p>
-      <button class="btn-primary" onclick="openModal('idea')">+ Add First Idea</button>
+      <h3>no ideas yet</h3>
+      <p>every great look starts with a spark. log yours here before it disappears!</p>
+      <button class="btn-primary" onclick="openModal('idea')">+ add first idea</button>
     </div>`;
     return;
   }
@@ -1943,7 +2263,7 @@ function renderIdeas() {
         <div class="idea-title">${i.title}</div>
         <div class="idea-meta">
           <span class="idea-pillar-tag" style="background:${PILLAR_COLORS[i.pillar]}22;color:${PILLAR_COLORS[i.pillar]}">${i.pillar}</span>
-          <span class="status-tag ${i.status}">${i.status === 'status-idea' ? '💭 Idea' : i.status === 'status-progress' ? '🎬 In Progress' : i.status === 'status-filmed' ? '📹 Filmed' : '✅ Posted'}</span>
+          <span class="status-tag ${i.status}">${i.status === 'status-idea' ? 'idea' : i.status === 'status-progress' ? 'in progress' : i.status === 'status-filmed' ? 'filmed' : 'posted'}</span>
         </div>
         ${i.notes ? `<div class="idea-notes">${i.notes}</div>` : ''}
       </div>
@@ -1962,9 +2282,9 @@ function renderWishlist() {
   if (data.wishlist.length === 0) {
     container.innerHTML = `<div class="empty-state">
       <div class="empty-icon">🛍️</div>
-      <h3>Your wish list is empty</h3>
-      <p>We both know that won't last long 😄 Add palettes you're lusting after!</p>
-      <button class="btn-primary" onclick="openModal('wish')">+ Add to Wish List</button>
+      <h3>your wish list is empty</h3>
+      <p>we both know that won't last long 😄 add palettes you're lusting after!</p>
+      <button class="btn-primary" onclick="openModal('wish')">+ Add to wish list</button>
     </div>`;
     return;
   }
@@ -1991,9 +2311,9 @@ function renderReviews() {
   if (data.reviews.length === 0) {
     container.innerHTML = `<div class="empty-state">
       <div class="empty-icon">📖</div>
-      <h3>No content drafted yet</h3>
-      <p>Start logging your reviews and tutorials — your voice is the whole point!</p>
-      <button class="btn-primary" onclick="openModal('review')">+ Add Content</button>
+      <h3>no content drafted yet</h3>
+      <p>start logging your reviews and tutorials — your voice is the whole point!</p>
+      <button class="btn-primary" onclick="openModal('review')">+ add content</button>
     </div>`;
     return;
   }
@@ -2004,7 +2324,7 @@ function renderReviews() {
       <div class="content-item-body">
         <div class="content-item-title">${r.title}</div>
         <div style="margin-bottom:8px;">
-          <span class="status-tag ${r.status}">${r.status === 'status-idea' ? '💭 Draft Idea' : r.status === 'status-progress' ? '✍️ Writing' : r.status === 'status-filmed' ? '📹 Filmed' : '✅ Published'}</span>
+          <span class="status-tag ${r.status}">${r.status === 'status-idea' ? 'draft idea' : r.status === 'status-progress' ? 'writing' : r.status === 'status-filmed' ? 'filmed' : 'published'}</span>
         </div>
         ${r.notes ? `<div class="content-item-notes">${r.notes}</div>` : ''}
       </div>
@@ -2015,15 +2335,15 @@ function renderReviews() {
 }
 
 // ---- RENDER TRENDS ----
-function renderTrends() {
+function rendertrends() {
   const container = document.getElementById('trends-container');
 
   if (data.trends.length === 0) {
     container.innerHTML = `<div class="empty-state">
       <div class="empty-icon">📈</div>
-      <h3>No trends tracked yet</h3>
-      <p>Stay ahead of the beauty world — log what's hot on your FYP!</p>
-      <button class="btn-primary" onclick="openModal('trend')">+ Add Trend</button>
+      <h3>no trends tracked yet</h3>
+      <p>stay ahead of the beauty world — log what's hot on your fyp!</p>
+      <button class="btn-primary" onclick="openModal('trend')">+ add trend</button>
     </div>`;
     return;
   }
@@ -2049,9 +2369,9 @@ function renderInspo() {
   if (data.inspo.length === 0) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
       <div class="empty-icon">🌸</div>
-      <h3>Your inspo board is blank</h3>
-      <p>Save looks, colors, and vibes that speak to the By Bica aesthetic!</p>
-      <button class="btn-primary" onclick="openModal('inspo')">+ Add Inspo</button>
+      <h3>your inspo board is blank</h3>
+      <p>save looks, colors, and vibes that speak to the by bica aesthetic!</p>
+      <button class="btn-primary" onclick="openModal('inspo')">+ add inspo</button>
     </div>`;
     return;
   }
@@ -2065,8 +2385,8 @@ function renderInspo() {
         <div class="inspo-title">${i.title}</div>
         ${i.notes ? `<div class="inspo-note">${i.notes}</div>` : ''}
         <div style="display:flex;gap:6px;margin-top:10px;">
-          <button class="action-btn edit" onclick="editInspo(${i.id})" style="flex:1;padding:6px;">✏️ Edit</button>
-          <button class="action-btn delete" onclick="deleteItem('inspo', ${i.id})" style="flex:1;padding:6px;">🗑 Remove</button>
+          <button class="action-btn edit" onclick="editInspo(${i.id})" style="flex:1;padding:6px;">edit</button>
+          <button class="action-btn delete" onclick="deleteItem('inspo', ${i.id})" style="flex:1;padding:6px;">remove</button>
         </div>
       </div>
     </div>
@@ -2086,9 +2406,57 @@ function renderAll() {
   renderIdeas();
   renderWishlist();
   renderReviews();
-  renderTrends();
+  rendertrends();
   renderInspo();
+  renderRoster();
   updateCounts();
+  renderAboutStats();
+  loadAbout();
+}
+
+async function saveAbout() {
+  const about = {
+    bio: document.getElementById('ab-bio').value,
+    tone: document.getElementById('ab-tone').value,
+    undertone: document.getElementById('ab-undertone').value,
+    skintype: document.getElementById('ab-skintype').value,
+    gotos: document.getElementById('ab-gotos').value
+  };
+  localStorage.setItem('bybica-about', JSON.stringify(about));
+  const btn = document.querySelector('#about .btn-primary');
+  btn.textContent = 'saved!';
+  setTimeout(() => btn.textContent = 'save changes', 1500);
+}
+
+function loadAbout() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('bybica-about') || '{}');
+    if (saved.bio) document.getElementById('ab-bio').value = saved.bio;
+    if (saved.tone) document.getElementById('ab-tone').value = saved.tone;
+    if (saved.undertone) document.getElementById('ab-undertone').value = saved.undertone;
+    if (saved.skintype) document.getElementById('ab-skintype').value = saved.skintype;
+    if (saved.gotos) document.getElementById('ab-gotos').value = saved.gotos;
+  } catch(e) {}
+}
+
+function renderAboutStats() {
+  const el = document.getElementById('about-stats');
+  if (!el) return;
+  const total = data.palettes.length;
+  const vibeCount = {};
+  data.palettes.forEach(p => (p.vibes||[]).forEach(v => vibeCount[v] = (vibeCount[v]||0)+1));
+  const topVibe = Object.entries(vibeCount).sort((a,b)=>b[1]-a[1])[0];
+  const brandCount = {};
+  data.palettes.forEach(p => { if(p.brand) brandCount[p.brand] = (brandCount[p.brand]||0)+1; });
+  const topBrand = Object.entries(brandCount).sort((a,b)=>b[1]-a[1])[0];
+  el.innerHTML = `
+    <div class="about-stat"><div class="about-stat-num">${total}</div><div class="about-stat-label">palettes</div></div>
+    <div class="about-stat"><div class="about-stat-num">${data.wishlist.length}</div><div class="about-stat-label">on wish list</div></div>
+    <div class="about-stat"><div class="about-stat-num">${data.reviews.length}</div><div class="about-stat-label">pieces of content</div></div>
+    <div class="about-stat"><div class="about-stat-num">${data.inspo.length}</div><div class="about-stat-label">inspo saves</div></div>
+    ${topBrand ? `<div class="about-stat" style="grid-column:span 2"><div class="about-stat-num" style="font-size:16px;">${topBrand[0]}</div><div class="about-stat-label">most collected brand (${topBrand[1]})</div></div>` : ''}
+    ${topVibe ? `<div class="about-stat" style="grid-column:span 2"><div class="about-stat-num" style="font-size:16px;">${topVibe[0]}</div><div class="about-stat-label">top vibe</div></div>` : ''}
+  `;
 }
 
 // ---- PALETTE DETAIL ----
@@ -2151,7 +2519,7 @@ function editIdea(id) {
   editingId = id;
   document.getElementById('idea-modal-title').textContent = 'Edit Idea ✏️';
   document.getElementById('idea-modal-sub').textContent = 'Update your content idea';
-  document.getElementById('idea-save-btn').textContent = 'Save Changes 🌸';
+  document.getElementById('idea-save-btn').textContent = 'save changes';
   document.getElementById('i-title').value = item.title;
   document.getElementById('i-pillar').value = item.pillar;
   document.getElementById('i-status').value = item.status;
@@ -2163,9 +2531,9 @@ function editWish(id) {
   const item = data.wishlist.find(w => w.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('wish-modal-title').textContent = 'Edit Wish List Item ✏️';
+  document.getElementById('wish-modal-title').textContent = 'Edit wish list Item ✏️';
   document.getElementById('wish-modal-sub').textContent = 'Update this palette';
-  document.getElementById('wish-save-btn').textContent = 'Save Changes 🛍️';
+  document.getElementById('wish-save-btn').textContent = 'save changes';
   document.getElementById('w-brand').value = item.brand;
   document.getElementById('w-name').value = item.name;
   document.getElementById('w-price').value = item.price || '';
@@ -2180,7 +2548,7 @@ function editReview(id) {
   editingId = id;
   document.getElementById('review-modal-title').textContent = 'Edit Content ✏️';
   document.getElementById('review-modal-sub').textContent = 'Update your draft';
-  document.getElementById('review-save-btn').textContent = 'Save Changes 📖';
+  document.getElementById('review-save-btn').textContent = 'save changes';
   document.getElementById('r-title').value = item.title;
   document.getElementById('r-type').value = item.type;
   document.getElementById('r-status').value = item.status;
@@ -2194,7 +2562,7 @@ function editTrend(id) {
   editingId = id;
   document.getElementById('trend-modal-title').textContent = 'Edit Trend ✏️';
   document.getElementById('trend-modal-sub').textContent = 'Update this trend';
-  document.getElementById('trend-save-btn').textContent = 'Save Changes 📈';
+  document.getElementById('trend-save-btn').textContent = 'save changes';
   document.getElementById('tr-name').value = item.name;
   document.getElementById('tr-heat').value = item.heat;
   document.getElementById('tr-platform').value = item.platform;
@@ -2208,7 +2576,7 @@ function editInspo(id) {
   editingId = id;
   document.getElementById('inspo-modal-title').textContent = 'Edit Inspo ✏️';
   document.getElementById('inspo-modal-sub').textContent = 'Update this inspiration';
-  document.getElementById('inspo-save-btn').textContent = 'Save Changes 🌸';
+  document.getElementById('inspo-save-btn').textContent = 'save changes';
   document.getElementById('in-title').value = item.title;
   document.getElementById('in-img').value = item.img || '';
   document.getElementById('in-emoji').value = item.emoji || '';
@@ -2223,7 +2591,7 @@ function updateGreeting() {
   if (hour >= 12 && hour < 17) greeting = 'Good afternoon';
   else if (hour >= 17) greeting = 'Good evening';
   const el = document.getElementById('greeting-title');
-  if (el) el.innerHTML = greeting + ', <span>bica</span> ✨';
+  if (el) el.innerHTML = greeting + ', <span>bica</span>';
 }
 
 // ---- INIT ----
