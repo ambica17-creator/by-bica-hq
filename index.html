@@ -1019,35 +1019,35 @@ body {
   <div class="sidebar-nav">
     <div class="nav-section-label">Overview</div>
     <div class="nav-item active" onclick="showSection('dashboard')">
-      dashboard
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg> dashboard
     </div>
     <div class="nav-section-label">collection</div>
     <div class="nav-item" onclick="showSection('palettes')">
-      palette inventory
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 6.6H21l-5.6 4.1 2.1 6.6L12 16.2l-5.5 4.1 2.1-6.6L3 9.6h6.8z"/></svg> palette inventory
     </div>
     <div class="nav-item" onclick="showSection('wishlist')">
-      wish list
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg> wish list
     </div>
     <div class="nav-section-label">Content</div>
     <div class="nav-item" onclick="showSection('ideas')">
-      content ideas
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg> content ideas
     </div>
     <div class="nav-item" onclick="showSection('reviews')">
-      reviews & tutorials
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> reviews & tutorials
     </div>
     <div class="nav-item" onclick="showSection('trends')">
-      trends
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> trends
     </div>
     <div class="nav-section-label">inspiration</div>
     <div class="nav-item" onclick="showSection('inspo')">
-      inspo board
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> inspo board
     </div>
     <div class="nav-section-label">me</div>
     <div class="nav-item" onclick="showSection('about')">
-      about me
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> about me
     </div>
     <div class="nav-item" onclick="showSection('roster')">
-      the roster
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> the roster
     </div>
   </div>
   <div class="sidebar-footer">
@@ -1125,7 +1125,7 @@ body {
     </div>
     <div class="content">
       <div class="filters-bar">
-        <input class="search-input" id="palette-search" placeholder="🔍 Search palettes..." oninput="renderPalettes()">
+        <input class="search-input" id="palette-search" placeholder=" Search palettes..." oninput="renderPalettes()">
         <button class="filter-btn active" onclick="setPaletteFilter('all', this)">all</button>
         <button class="filter-btn" onclick="setPaletteFilter('warm', this)">warm</button>
         <button class="filter-btn" onclick="setPaletteFilter('pinky-warm', this)">pinky warm</button>
@@ -1391,11 +1391,11 @@ body {
       <div class="form-group">
         <label>Rating</label>
         <div class="star-rating" id="star-rating">
-          <button class="star-btn" onclick="setRating(1)">⭐</button>
-          <button class="star-btn" onclick="setRating(2)">⭐</button>
-          <button class="star-btn" onclick="setRating(3)">⭐</button>
-          <button class="star-btn" onclick="setRating(4)">⭐</button>
-          <button class="star-btn" onclick="setRating(5)">⭐</button>
+          <button class="star-btn" onclick="setRating(1)"></button>
+          <button class="star-btn" onclick="setRating(2)"></button>
+          <button class="star-btn" onclick="setRating(3)"></button>
+          <button class="star-btn" onclick="setRating(4)"></button>
+          <button class="star-btn" onclick="setRating(5)"></button>
         </div>
       </div>
       <div class="form-group">
@@ -1661,7 +1661,7 @@ body {
       </div>
       <div class="form-group">
         <label>Emoji / Vibe (if no image)</label>
-        <input type="text" id="in-emoji" placeholder="e.g. 🌸 or 💄 or ✨" maxlength="4">
+        <input type="text" id="in-emoji" placeholder="e.g.  or  or " maxlength="4">
       </div>
       <div class="form-group">
         <label>source url</label>
@@ -1871,7 +1871,7 @@ function closeModal(type) {
     'inspo-detail': [null, null, null],
     palette: ['add a palette', 'log a new palette to your collection', 'add to collection'],
     idea: ['new content idea', 'capture the spark before it fades', 'save idea'],
-    wish: ['Add to wish list 🛍️', "something you're lusting after", 'add to list'],
+    wish: ['Add to wish list ', "something you're lusting after", 'add to list'],
     review: ['add content', 'draft a review or tutorial', 'save content'],
     trend: ['track a trend', "what's buzzing in beauty right now", 'track it'],
     inspo: ['add inspo', 'save something that inspires you', 'save inspo'],
@@ -1919,7 +1919,7 @@ function updateStars(n) {
 }
 
 function starsHTML(n) {
-  return '⭐'.repeat(n) + '☆'.repeat(5 - n);
+  return ''.repeat(n) + ''.repeat(5 - n);
 }
 
 // ---- SAVE FUNCTIONS ----
@@ -1965,7 +1965,7 @@ function editPalette(id) {
   if (!p) return;
   editingId = id;
 
-  document.getElementById('palette-modal-title').textContent = 'Edit Palette ✏️';
+  document.getElementById('palette-modal-title').textContent = 'Edit Palette ';
   document.getElementById('palette-modal-sub').textContent = 'Update your palette details';
   document.getElementById('palette-save-btn').textContent = 'save changes';
 
@@ -2220,7 +2220,7 @@ function renderPalettes() {
 
   if (items.length === 0) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
-      <div class="empty-icon">💄</div>
+      
       <h3>no palettes yet</h3>
       <p>start adding your collection — every palette deserves to be seen!</p>
       <button class="btn-primary" onclick="openModal('palette')">+ add your first palette</button>
@@ -2231,7 +2231,7 @@ function renderPalettes() {
   grid.innerHTML = items.map(p => `
     <div class="item-card" onclick="openPaletteDetail(${p.id})" style="cursor:pointer;">
       <div class="item-card-color" style="${p.img ? 'padding:0;' : 'background:' + (PALETTE_GRADIENTS[(p.ranges||[])[0]] || PALETTE_GRADIENTS.mixed)}">
-        ${p.img ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='👁️';this.parentElement.style.background='${PALETTE_GRADIENTS.mixed}'">` : '👁️'}
+        ${p.img ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='';this.parentElement.style.background='${PALETTE_GRADIENTS.mixed}'">` : ''}
       </div>
       <div class="item-card-body">
         <div class="item-card-brand">${p.brand}</div>
@@ -2259,12 +2259,22 @@ function renderIdeas() {
   const container = document.getElementById('ideas-container');
   let items = data.ideas.filter(i => ideaFilter === 'all' || i.pillar === ideaFilter);
 
+  // Always update blurb
+  const blurbEl = document.getElementById('pillar-blurb');
+  if (blurbEl) {
+    if (ideaFilter !== 'all' && PILLAR_BLURBS[ideaFilter]) {
+      blurbEl.textContent = PILLAR_BLURBS[ideaFilter];
+      blurbEl.style.display = 'block';
+    } else {
+      blurbEl.style.display = 'none';
+    }
+  }
+
   if (items.length === 0) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">💡</div>
       <h3>no ideas yet</h3>
-      <p>every great look starts with a spark. log yours here before it disappears!</p>
-      <button class="btn-primary" onclick="openModal('idea')">+ add first idea</button>
+      <p>add your first idea for this pillar</p>
+      <button class="btn-primary" onclick="openModal('idea')">+ add idea</button>
     </div>`;
     return;
   }
@@ -2281,8 +2291,8 @@ function renderIdeas() {
         ${i.notes ? `<div class="idea-notes">${i.notes}</div>` : ''}
       </div>
       <div class="idea-actions">
-        <button class="icon-btn edit" onclick="editIdea(${i.id})">✏️</button>
-        <button class="icon-btn delete" onclick="deleteItem('ideas', ${i.id})">🗑</button>
+        <button class="icon-btn edit" onclick="editIdea(${i.id})"></button>
+        <button class="icon-btn delete" onclick="deleteItem('ideas', ${i.id})"></button>
       </div>
     </div>
   `).join('');
@@ -2294,9 +2304,9 @@ function renderWishlist() {
 
   if (data.wishlist.length === 0) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">🛍️</div>
+      
       <h3>your wish list is empty</h3>
-      <p>we both know that won't last long 😄 add palettes you're lusting after!</p>
+      <p>we both know that won't last long  add palettes you're lusting after!</p>
       <button class="btn-primary" onclick="openModal('wish')">+ Add to wish list</button>
     </div>`;
     return;
@@ -2304,15 +2314,15 @@ function renderWishlist() {
 
   container.innerHTML = `<div style="display:flex;flex-direction:column;gap:12px;">${data.wishlist.map(w => `
     <div class="wish-card">
-      <div class="wish-emoji">💄</div>
+      
       <div class="wish-body">
         <div class="wish-name">${w.name}</div>
         <div class="wish-brand">${w.brand} · ${w.priority}</div>
         ${w.notes ? `<div style="font-size:12px;color:var(--text-muted);margin-top:4px;">${w.notes}</div>` : ''}
       </div>
       ${w.price ? `<div class="wish-price">${w.price}</div>` : ''}
-      <button class="icon-btn edit" onclick="editWish(${w.id})" style="margin-right:4px;">✏️</button>
-      <button class="icon-btn delete" onclick="deleteItem('wishlist', ${w.id})">🗑</button>
+      <button class="icon-btn edit" onclick="editWish(${w.id})" style="margin-right:4px;">edit</button>
+      <button class="icon-btn delete" onclick="deleteItem('wishlist', ${w.id})">remove</button>
     </div>
   `).join('')}</div>`;
 }
@@ -2323,7 +2333,7 @@ function renderReviews() {
 
   if (data.reviews.length === 0) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">📖</div>
+      
       <h3>no content drafted yet</h3>
       <p>start logging your reviews and tutorials — your voice is the whole point!</p>
       <button class="btn-primary" onclick="openModal('review')">+ add content</button>
@@ -2341,8 +2351,8 @@ function renderReviews() {
         </div>
         ${r.notes ? `<div class="content-item-notes">${r.notes}</div>` : ''}
       </div>
-      <button class="icon-btn edit" onclick="editReview(${r.id})">✏️</button>
-      <button class="icon-btn delete" onclick="deleteItem('reviews', ${r.id})">🗑</button>
+      <button class="icon-btn edit" onclick="editReview(${r.id})">edit</button>
+      <button class="icon-btn delete" onclick="deleteItem('reviews', ${r.id})">remove</button>
     </div>
   `).join('');
 }
@@ -2353,7 +2363,7 @@ function rendertrends() {
 
   if (data.trends.length === 0) {
     container.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">📈</div>
+      
       <h3>no trends tracked yet</h3>
       <p>stay ahead of the beauty world — log what's hot on your fyp!</p>
       <button class="btn-primary" onclick="openModal('trend')">+ add trend</button>
@@ -2363,14 +2373,14 @@ function rendertrends() {
 
   container.innerHTML = data.trends.map(t => `
     <div class="trend-card">
-      <div class="trend-heat ${t.heat}">${t.heat === 'hot' ? '🔥' : t.heat === 'warm' ? '✨' : '👀'}</div>
+      <div class="trend-heat ${t.heat}"></div>
       <div class="trend-body">
         <div class="trend-name">${t.name}</div>
         <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;">${t.platform}</div>
         ${t.notes ? `<div class="trend-notes">${t.notes}</div>` : ''}
       </div>
-      <button class="icon-btn edit" onclick="editTrend(${t.id})">✏️</button>
-      <button class="icon-btn delete" onclick="deleteItem('trends', ${t.id})">🗑</button>
+      <button class="icon-btn edit" onclick="editTrend(${t.id})">edit</button>
+      <button class="icon-btn delete" onclick="deleteItem('trends', ${t.id})">remove</button>
     </div>
   `).join('');
 }
@@ -2381,7 +2391,7 @@ function renderInspo() {
 
   if (data.inspo.length === 0) {
     grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
-      <div class="empty-icon">🌸</div>
+      
       <h3>your inspo board is blank</h3>
       <p>save looks, colors, and vibes that speak to the by bica aesthetic!</p>
       <button class="btn-primary" onclick="openModal('inspo')">+ add inspo</button>
@@ -2483,9 +2493,9 @@ function openPaletteDetail(id) {
   // Image
   const imgArea = document.getElementById('detail-img-area');
   if (p.img) {
-    imgArea.innerHTML = `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='👁️'">`;
+    imgArea.innerHTML = `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML=''">`;
   } else {
-    imgArea.innerHTML = '👁️';
+    imgArea.innerHTML = '';
     imgArea.style.background = 'linear-gradient(135deg, var(--blush), var(--champagne))';
   }
 
@@ -2500,7 +2510,7 @@ function openPaletteDetail(id) {
   tags.innerHTML = allTags.join('');
 
   // Rating
-  document.getElementById('detail-rating').textContent = p.rating ? '⭐'.repeat(p.rating) + '☆'.repeat(5-p.rating) : '';
+  document.getElementById('detail-rating').textContent = p.rating ? ''.repeat(p.rating) + ''.repeat(5-p.rating) : '';
 
   // Review
   const reviewEl = document.getElementById('detail-review');
@@ -2530,7 +2540,7 @@ function editIdea(id) {
   const item = data.ideas.find(i => i.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('idea-modal-title').textContent = 'Edit Idea ✏️';
+  document.getElementById('idea-modal-title').textContent = 'Edit Idea ';
   document.getElementById('idea-modal-sub').textContent = 'Update your content idea';
   document.getElementById('idea-save-btn').textContent = 'save changes';
   document.getElementById('i-title').value = item.title;
@@ -2544,7 +2554,7 @@ function editWish(id) {
   const item = data.wishlist.find(w => w.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('wish-modal-title').textContent = 'Edit wish list Item ✏️';
+  document.getElementById('wish-modal-title').textContent = 'Edit wish list Item ';
   document.getElementById('wish-modal-sub').textContent = 'Update this palette';
   document.getElementById('wish-save-btn').textContent = 'save changes';
   document.getElementById('w-brand').value = item.brand;
@@ -2559,7 +2569,7 @@ function editReview(id) {
   const item = data.reviews.find(r => r.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('review-modal-title').textContent = 'Edit Content ✏️';
+  document.getElementById('review-modal-title').textContent = 'Edit Content ';
   document.getElementById('review-modal-sub').textContent = 'Update your draft';
   document.getElementById('review-save-btn').textContent = 'save changes';
   document.getElementById('r-title').value = item.title;
@@ -2573,7 +2583,7 @@ function editTrend(id) {
   const item = data.trends.find(t => t.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('trend-modal-title').textContent = 'Edit Trend ✏️';
+  document.getElementById('trend-modal-title').textContent = 'Edit Trend ';
   document.getElementById('trend-modal-sub').textContent = 'Update this trend';
   document.getElementById('trend-save-btn').textContent = 'save changes';
   document.getElementById('tr-name').value = item.name;
@@ -2587,7 +2597,7 @@ function editInspo(id) {
   const item = data.inspo.find(i => i.id === id);
   if (!item) return;
   editingId = id;
-  document.getElementById('inspo-modal-title').textContent = 'Edit Inspo ✏️';
+  document.getElementById('inspo-modal-title').textContent = 'Edit Inspo ';
   document.getElementById('inspo-modal-sub').textContent = 'Update this inspiration';
   document.getElementById('inspo-save-btn').textContent = 'save changes';
   document.getElementById('in-title').value = item.title;
@@ -2600,9 +2610,9 @@ function editInspo(id) {
 // ---- GREETING ----
 function updateGreeting() {
   const hour = new Date().getHours();
-  let greeting = 'Good morning';
-  if (hour >= 12 && hour < 17) greeting = 'Good afternoon';
-  else if (hour >= 17) greeting = 'Good evening';
+  let greeting = 'good morning';
+  if (hour >= 12 && hour < 17) greeting = 'good afternoon';
+  else if (hour >= 17) greeting = 'good evening';
   const el = document.getElementById('greeting-title');
   if (el) el.innerHTML = greeting + ', <span>bica</span>';
 }
